@@ -1,7 +1,11 @@
 pipeline {
-    agent { label 'java' }
+    // agent { label 'java' }
+    agent none
     stages {
+        stage ('hello-world-war_jenkins')
+        parallel {
         stage('checkout') {
+            agent { label 'java' }
              steps {
                sh "rm -rf hello-world-war_jenkins"
                sh "git clone https://github.com/patilsahana1234/hello-world-war_jenkins"
@@ -18,6 +22,8 @@ pipeline {
            }
         }
     }
+}
+}
 }
 
 
