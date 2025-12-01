@@ -13,10 +13,10 @@ choice(name: 'cmd1', choices: ['install', 'compile'], description: 'Choose one o
             agent { label 'java' }
         steps {
                 
-                /* withCredentials([usernamePassword(
+                withCredentials([usernamePassword(
                             credentialsId: '18ebe766-3c6a-4e69-bcff-78285990d3a3',
                             usernameVariable: 'Sahana_USER',
-                            passwordVariable: 'Sahana_PASS' */
+                            passwordVariable: 'Sahana_PASS' 
                       withCredentials([sshUserPrivateKey(
                             credentialsId: '2d1bc43f-a959-47c9-900b-6e09bf6b154f',
                              keyFileVariable: 'Sahana_SSH_KEY',
