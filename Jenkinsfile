@@ -13,7 +13,7 @@ pipeline {
         stage('Checkout Code') {
             steps {
                 git branch: 'master',
-                    url: 'https://github.com/patilsahana1234/hello-world-war_jenkins.git'
+                    url: 'https://github.com/patilsahana1234/docker-hello-world-war.git'
             }
         }
 
