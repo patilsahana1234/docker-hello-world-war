@@ -4,7 +4,7 @@ pipeline {
     environment {
         IMAGE_NAME   = "sahanasp123/hello-world-war"
         IMAGE_TAG    = "latest"
-        DOCKER_CREDS = "dockerhub-creds"
+        DOCKER_CREDS = "${BUILD_NUMBER}"
         CONTAINER_NAME = "hello-war-container"
     }
 
