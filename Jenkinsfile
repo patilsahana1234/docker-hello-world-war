@@ -1,5 +1,6 @@
 pipeline {
     agent {
+        docker {
         image 'docker:latest'
         args '-v /var/run/docker.sock:/var/run/docker.sock -v /usr/bin/docker:/usr/bin/docker'
     }
@@ -7,8 +8,8 @@ pipeline {
 
     environment {
         IMAGE_NAME   = "sahanasp123/hello-world-war"
-        IMAGE_TAG    = "latest"
-        DOCKER_CREDS = "${BUILD_NUMBER}"
+        IMAGE_TAG    = "${BUILD_NUMBER}"
+        DOCKER_CREDS = "dockerhub-creds"
         CONTAINER_NAME = "hello-war-container"
     }
 
